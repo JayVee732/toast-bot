@@ -1,5 +1,8 @@
 {
-	"extends": "eslint:recommended",
+	"extends": [
+		"some-other-config-you-use",
+		"prettier"
+	  ],
 	"env": {
 		"node": true,
 		"es6": true

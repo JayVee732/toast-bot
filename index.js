@@ -13,7 +13,8 @@ bot.on('ready', () => {
 });
 
 bot.on('message', (msg) => {
-	if (msg.content.includes('toast')) {
+	// if (msg.content.includes('toast')) {
+	if (msg.content == 'Toast?') {
 		friday(msg);
 	}
 });
