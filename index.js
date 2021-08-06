@@ -1,28 +1,42 @@
+'use strict';
+
 require('dotenv').config();
 const Discord = require('discord.js');
-const bot = new Discord.Client();
+const client = new Discord.Client();
 const TOKEN = process.env.TOKEN;
 
-const today = new Date();
-const wkday = today.getDay();
+let today = new Date();
+let wkday = today.getDay();
 
-bot.login(TOKEN);
-
-bot.on('ready', () => {
-	console.log(`Logged in as ${bot.user.tag}!`);
+client.on('ready', () => {
+	console.log(`Logged in as ${client.user.tag}!`);
 });
 
-bot.on('message', (msg) => {
-	// if (msg.content.includes('toast')) {
-	if (msg.content == 'Toast?') {
-		friday(msg);
+client.on('message', (msg) => {
+	if (msg.content.toLowerCase().includes('toast mode')) {
+		postFridayMessage(msg);
+		changeChannel('🍞-toast-zone-🍞', 'Toast');
+	} else if (msg.content.toLowerCase().includes('pizza time')) {
+		changeChannel('🍕-pizza-zone-🍕', 'Pizza');
 	}
 });
 
-function friday(msg) {
+function postFridayMessage(msg) {
 	if (wkday == 5) {
-		msg.reply('Time for T O A S T!');
+		msg.channel.send('Time for T O A S T!');
 	} else {
-		msg.reply('You may eat toast, but it is not time for T O A S T yet.');
+		msg.channel.send(
+			'You may eat toast, but it is not time for T O A S T yet.'
+		);
 	}
 }
+
+function changeChannel(name, topic) {
+	let general = client.channels.cache.get('869922821839650860');
+	general.edit({
+		name: name,
+		topic: `Topical free for all, bring ${topic}.`,
+	});
+}
+
+client.login(TOKEN);
