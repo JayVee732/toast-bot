@@ -1,42 +1,39 @@
 'use strict';
 
 require('dotenv').config();
-const Discord = require('discord.js');
-const client = new Discord.Client();
+const { Client, Intents, TextChannel } = require('discord.js');
+const client = new Client({ intents: [Intents.FLAGS.GUILDS] });
 const TOKEN = process.env.TOKEN;
+const cron = require('node-cron');
 
 let today = new Date();
-let wkday = today.getDay();
+let channelId = '869922821839650860';
+let channel = client.channels.cache.get(channelId);
 
-client.on('ready', () => {
+client.once('ready', () => {
 	console.log(`Logged in as ${client.user.tag}!`);
 });
 
-client.on('message', (msg) => {
-	if (msg.content.toLowerCase().includes('toast mode')) {
-		postFridayMessage(msg);
-		changeChannel('🍞-toast-zone-🍞', 'Toast');
-	} else if (msg.content.toLowerCase().includes('pizza time')) {
-		changeChannel('🍕-pizza-zone-🍕', 'Pizza');
-	}
-});
-
-function postFridayMessage(msg) {
-	if (wkday == 5) {
-		msg.channel.send('Time for T O A S T!');
-	} else {
-		msg.channel.send(
-			'You may eat toast, but it is not time for T O A S T yet.'
-		);
-	}
-}
-
 function changeChannel(name, topic) {
-	let general = client.channels.cache.get('869922821839650860');
-	general.edit({
+	channel.edit({
 		name: name,
 		topic: `Topical free for all, bring ${topic}.`,
 	});
 }
 
 client.login(TOKEN);
+
+// Change to Toast Zone at 00:00 on Friday
+cron.schedule('0 0 * * 5', function () {
+	console.log('Time for T O A S T');
+	channel.send('Time for T O A S T');
+	changeChannel('🍞-toast-zone-🍞', 'Toast');
+});
+
+// Change to Pizza Zone at 00:00 on Saturday
+cron.schedule('* * * * *', function () {
+	//cron.schedule('0 0 * * 6', function () {
+	console.log('Return to Pizza');
+	channel.send('Return to Pizza');
+	changeChannel('🍕-pizza-zone-🍕', 'Pizza');
+});
