@@ -37,14 +37,14 @@ client.login(TOKEN);
 
 // Change to Toast Zone at 00:00 on Friday
 //cron.schedule('0 0 * * 5', function () {
-cron.schedule('42 21 * * *', function () {
+cron.schedule('50 21 * * *', function () {
 	console.log('Time for T O A S T');
 	changeChannel('🍞-toast-zone-🍞', 'Toast');
 });
 
 // Change to Pizza Zone at 00:00 on Saturday
 //cron.schedule('0 0 * * 6', function () {
-cron.schedule('43 21 * * *', function () {
+cron.schedule('51 21 * * *', function () {
 	console.log('Return to Pizza');
 	changeChannel('🍕-pizza-zone-🍕', 'Pizza');
 });
