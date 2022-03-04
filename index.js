@@ -26,10 +26,8 @@ function changeChannel(name, topic) {
 	});
 
 	if (topic === "Toast") {
-		channel.send('Time for T O A S T');
-	}
-	else if (topic === "Pizza") {
-		channel.send('Return to Pizza');
+		channel.send('Time for.....');
+		channel.send('<a:LucasRotisserieToast:817507437526515762> - T  O  A  S  T  -  Z  O  N  E - <a:LucasRotisserieToast:817507437526515762>');
 	}
 }
 
