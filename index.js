@@ -18,10 +18,6 @@ client.once('ready', () => {
 	console.log(`Logged in as ${client.user.tag}!`);
 });
 
-setInterval(function () {
-	http.get("https://toast-bot1.herokuapp.com/");
-}, 300000); // every 5 minutes (300000)
-
 function changeChannel(name, topic) {
 	let channel = client.channels.cache.get(channelId);
 	channel.edit({
