@@ -40,7 +40,7 @@ cron.schedule('0 0 * * 5', function () {
 });
 
 // Change to Pizza Zone at 00:00 on Saturday
-cron.schedule('4 0 * * 6', function () {
+cron.schedule('0 0 * * 6', function () {
 	console.log('Return to Pizza');
 	changeChannel('🍕-pizza-zone-🍕', 'Pizza');
 });
