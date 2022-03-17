@@ -34,7 +34,7 @@ function changeChannel(name, topic) {
 client.login(TOKEN);
 
 // Change to Toast Zone at 00:00 on Friday
-cron.schedule('22 24 * * 5', function () {
+cron.schedule('26 22 * * 5', function () {
 	console.log('Time for T O A S T');
 	changeChannel('🍞-toast-zone-🍞', 'Toast');
 });
