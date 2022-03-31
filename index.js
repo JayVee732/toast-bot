@@ -25,9 +25,11 @@ function changeChannel(name, topic) {
 		topic: `Topical free for all, bring ${topic}.`,
 	});
 
-	if (topic === "Toast") {
-		channel.send('Time for.....');
-		channel.send('<a:LucasRotisserieToast:817507437526515762> - T  O  A  S  T  -  Z  O  N  E - <a:LucasRotisserieToast:817507437526515762>');
+	//if (topic === "Toast") {
+	if (topic === "Stroopwaffel") {
+		channel.send('Time for.....'); 
+		//channel.send('<a:LucasRotisserieToast:817507437526515762> - T  O  A  S  T  -  Z  O  N  E - <a:LucasRotisserieToast:817507437526515762>');
+		channel.send('🧇 - S T R O O P W A F F E L  -  Z  O  N  E - 🧇');
 	}
 }
 
@@ -35,8 +37,9 @@ client.login(TOKEN);
 
 // Change to Toast Zone at 00:00 on Friday
 cron.schedule('0 0 * * 5', function () {
-	console.log('Time for T O A S T');
-	changeChannel('🍞-toast-zone-🍞', 'Toast');
+	//console.log('Time for T O A S T');
+	//changeChannel('🍞-toast-zone-🍞', 'Toast');
+	changeChannel('🧇-stroopwaffel-zone-🧇', 'Stroopwaffel');
 });
 
 // Change to Pizza Zone at 00:00 on Saturday
