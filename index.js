@@ -27,9 +27,11 @@ function changeChannel(name, topic) {
 
 	//if (topic === "Toast") {
 	if (topic === "Stroopwaffel") {
-		channel.send('Time for.....'); 
+		channel.send('Time for.....');
 		//channel.send('<a:LucasRotisserieToast:817507437526515762> - T  O  A  S  T  -  Z  O  N  E - <a:LucasRotisserieToast:817507437526515762>');
 		channel.send('🧇 - S T R O O P W A F F E L  -  Z  O  N  E - 🧇');
+		channel.send('The Toast is dead, long live the Waffle!');
+		channel.send('https://tenor.com/view/stroopwafel-food-foodporn-gif-5308311');
 	}
 }
 
