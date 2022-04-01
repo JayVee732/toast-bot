@@ -35,7 +35,7 @@ client.login(TOKEN);
 
 // Change to Toast Zone at 00:00 on Friday
 cron.schedule(process.env.START_TIME, () => {
-	changeChannel('🧇-stroopwafel-zone-🧇', 'Stroopwafel');
+	changeChannel('🍞-toast-zone-🍞', 'Toast');
 }, { timezone: "Europe/Dublin" });
 
 // Change to Pizza Zone at 00:00 on Saturday
