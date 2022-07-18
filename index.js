@@ -22,7 +22,7 @@ function changeChannel(name, topic) {
 	let channel = client.channels.cache.get(channelId);
 	channel.edit({
 		name: name,
-		topic: `The place to hand out, bring ${topic}.`,
+		topic: `The place to hang out, bring ${topic}.`,
 	});
 
 	if (topic === "Toast") {
