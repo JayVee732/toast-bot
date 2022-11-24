@@ -8,6 +8,12 @@ app.listen(process.env.PORT || 3000, function () {
 	console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
 });
 
+app.get("/", (request, response) => {
+    response.statusCode = 200;
+  	response.setHeader('Content-Type', 'text/plain');
+  	response.end('Hello World');
+});
+
 const { Client, GatewayIntentBits  } = require('discord.js');
 const client = new Client({ intents: [GatewayIntentBits.Guilds] });
 const TOKEN = process.env.TOKEN;
