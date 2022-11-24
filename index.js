@@ -8,8 +8,8 @@ app.listen(process.env.PORT || 3000, function () {
 	console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
 });
 
-const { Client, Intents } = require('discord.js');
-const client = new Client({ intents: [Intents.FLAGS.GUILDS] });
+const { Client, GatewayIntentBits  } = require('discord.js');
+const client = new Client({ intents: [GatewayIntentBits.Guilds] });
 const TOKEN = process.env.TOKEN;
 const cron = require('node-cron');
 let channelId = process.env.CHANNELID;
