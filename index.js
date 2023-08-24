@@ -64,7 +64,7 @@ cron.schedule(process.env.END_TIME, () => {
 
 // Timeout for Sunday
 //cron.schedule('0 0 * * 7', () => {
-cron.schedule('29 21 * * 4', () => {
+cron.schedule('40 21 * * 4', () => {
 	//userTimeOut(1440 * 60 * 1000);
 	console.log('Entering method.')
 	userTimeOut(5 * 1000);
