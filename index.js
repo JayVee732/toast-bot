@@ -8,7 +8,7 @@ app.listen(process.env.PORT || 3000, function () {
 	console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
 });
 
-app.get("/", (request, response) => {
+app.get("/", (response) => {
     response.statusCode = 200;
   	response.setHeader('Content-Type', 'text/plain');
   	response.end('Hello World');
@@ -19,7 +19,6 @@ const client = new Client({ intents: [GatewayIntentBits.Guilds] });
 const TOKEN = process.env.TOKEN;
 const cron = require('node-cron');
 let channelId = process.env.CHANNELID;
-
 
 client.once('ready', () => {
 	console.log(`Logged in as ${client.user.tag}!`);
@@ -38,18 +37,6 @@ function changeChannel(name, topic) {
 	}
 }
 
-async function userTimeOut(value) {
-	const guild = client.guilds.cache.get(process.env.GUILDID)	
-	guild.members.fetch(process.env.USERID).then(member => {
-		console.log(member);
-
-		member.timeout(value)
-		.then(console.log)
-		.catch(console.error);
-	});
-
-}
-
 client.login(TOKEN);
 
 // Change to Toast Zone at 00:00 on Friday
@@ -62,11 +49,3 @@ cron.schedule(process.env.END_TIME, () => {
 	changeChannel('🍕｜pizza-zone', 'pizza');
 }, { timezone: "Europe/Dublin" });
 
-// Timeout for Sunday
-//cron.schedule('0 0 * * 7', () => {
-cron.schedule('40 21 * * 4', () => {
-	//userTimeOut(1440 * 60 * 1000);
-	console.log('Entering method.')
-	userTimeOut(5 * 1000);
-//}, { timezone: "US/Central" });
-}, { timezone: "Europe/Dublin" });
