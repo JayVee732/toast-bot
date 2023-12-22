@@ -31,7 +31,7 @@ function changeChannel(name, topic) {
 		topic: `Your entry point to the server, this is a great place to introduce yourself and hang out. Bring ${topic}!`,
 	});
 
-	if (topic === "Toast") {
+	if (topic === "toast") {
 		channel.send('Time for.....');
 		channel.send('<a:LucasRotisserieToast:817507437526515762> - T  O  A  S  T  -  Z  O  N  E - <a:LucasRotisserieToast:817507437526515762>');
 	}
