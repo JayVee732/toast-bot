@@ -1,4 +1,0 @@
-{
-    "appService.deploySubpath": ".",
-    "appService.defaultWebAppToDeploy": "/subscriptions/3e4d154d-91b8-4aa9-b6a2-5ea69b79adbb/resourceGroups/appsvc_linux_centralus/providers/Microsoft.Web/sites/toast-bot"
-}
