@@ -1,6 +1,6 @@
 # Toast Bot
 
-![GPL-3.0 license](https://img.shields.io/github/license/jayvee732/toast-bot.svg)
+![GPL-3.0 license](https://img.shields.io/github/license/JayVee732/toast-bot.svg)
 
 The server bot that was used on The Midnight: Official Discord (now known as [The Mall](https://discord.gg/themall)) to automate changing over the main channel (Pizza Zone) on a Friday to Toast Zone.
 
